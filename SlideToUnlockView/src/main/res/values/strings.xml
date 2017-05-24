@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SlideToUnlockView</string>
+    <string name="hint">滑动解锁</string>
+
+</resources>

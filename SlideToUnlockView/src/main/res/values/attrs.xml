@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+
+
+    <!-- 滑动解锁控件 xml配置属性 -->
+    <declare-styleable name="SlideToUnlockView">
+        <attr name="slideImageViewWidth" format="dimension"/>
+        <attr name="slideImageViewResId" format="reference"/>
+        <attr name="viewBackgroundResId" format="reference"/>
+        <attr name="textHint" format="string"/>
+        <attr name="textSize" format="integer"/>
+        <attr name="textColorResId" format="color"/>
+        <attr name="slideThreshold" format="float"/>
+    </declare-styleable>
+
+
+
+</resources>
