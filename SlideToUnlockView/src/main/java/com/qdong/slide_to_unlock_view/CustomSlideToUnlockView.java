@@ -26,6 +26,7 @@ import com.nineoldandroids.view.ViewHelper;
  * Copyright : 2014-2016 深圳趣动智能科技有限公司-版权所有
  **/
 public class CustomSlideToUnlockView extends RelativeLayout {
+
     private static final String TAG="CustomSlideToUnlockView";
     private static final long DEAFULT_DURATIN_LONG = 200;//左弹回,动画时长
     private static final long DEAFULT_DURATIN_SHORT = 100;//右弹,动画时长
