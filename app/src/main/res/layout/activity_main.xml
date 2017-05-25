@@ -30,6 +30,7 @@
             chuck:viewBackgroundResId="@drawable/shape_round_normal_green"
             chuck:slideImageViewWidth="@dimen/slide_width"
             chuck:slideImageViewResId="@mipmap/icon_slide"
+            chuck:slideImageViewResIdAfter="@mipmap/ic_launcher"
             chuck:slideThreshold="0.5"
             chuck:textSize="6"
             chuck:textHint="@string/hint"
