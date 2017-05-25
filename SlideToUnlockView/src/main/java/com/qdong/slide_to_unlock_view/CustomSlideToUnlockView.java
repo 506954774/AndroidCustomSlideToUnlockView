@@ -44,6 +44,7 @@ public class CustomSlideToUnlockView extends RelativeLayout {
 
     private int slideImageViewWidth;//滑块宽度
     private int  slideImageViewResId;//滑块资源
+    private int  slideImageViewResIdAfter;//滑动到右边时,滑块资源id
     private int  viewBackgroundResId;//root 背景
     private String textHint;//文本
     private int textSize;//单位是sp,只拿数值
@@ -89,6 +90,7 @@ public class CustomSlideToUnlockView extends RelativeLayout {
 
         slideImageViewWidth= (int) mTypedArray.getDimension(R.styleable.SlideToUnlockView_slideImageViewWidth, DensityUtil.dp2px(getContext(), 50));
         slideImageViewResId= mTypedArray.getResourceId(R.styleable.SlideToUnlockView_slideImageViewResId, -1);
+        slideImageViewResIdAfter= mTypedArray.getResourceId(R.styleable.SlideToUnlockView_slideImageViewResIdAfter, -1);
         viewBackgroundResId= mTypedArray.getResourceId(R.styleable.SlideToUnlockView_viewBackgroundResId, -1);
         textHint=mTypedArray.getString(R.styleable.SlideToUnlockView_textHint);
         textSize=mTypedArray.getInteger(R.styleable.SlideToUnlockView_textSize, 7);
@@ -115,13 +117,15 @@ public class CustomSlideToUnlockView extends RelativeLayout {
         iv_slide = (ImageView) findViewById(R.id.iv_slide);
         tv_hint = (TextView) findViewById(R.id.tv_hint);
 
-        RelativeLayout.LayoutParams params= (RelativeLayout.LayoutParams) iv_slide .getLayoutParams();
+        LayoutParams params= (LayoutParams) iv_slide .getLayoutParams();
         //获取当前控件的布局对象
         params.width= slideImageViewWidth;//设置当前控件布局的高度
         iv_slide.setLayoutParams(params);//将设置好的布局参数应用到控件中
 
-        iv_slide.setImageResource(slideImageViewResId);//滑块imagview设置资源
-        rl_slide.setBackgroundResource(viewBackgroundResId);//rootView设置背景
+        setImageDefault();
+        if(viewBackgroundResId>0){
+            rl_slide.setBackgroundResource(viewBackgroundResId);//rootView设置背景
+        }
 
         MarginLayoutParams tvParams = (MarginLayoutParams) tv_hint.getLayoutParams();
         tvParams.setMargins(0, 0, slideImageViewWidth, 0);//textview的marginRight设置为和滑块的宽度一致
@@ -285,6 +289,7 @@ public class CustomSlideToUnlockView extends RelativeLayout {
                         if(mCallBack!=null){
                             mCallBack.onSlide(mSlidedDistance);
                         }
+                        setImageDefault();
                     }
                 })
                 .start();
@@ -326,6 +331,10 @@ public class CustomSlideToUnlockView extends RelativeLayout {
                         tv_hint.setAlpha(0.0f);
                         mIsUnLocked=true;
 
+                        if(slideImageViewResIdAfter>0){
+                            iv_slide.setImageResource(slideImageViewResIdAfter);//滑块imagview设置资源
+                        }
+
                         //回调
                         if(mCallBack!=null){
                             mCallBack.onUnlocked();
@@ -340,7 +349,23 @@ public class CustomSlideToUnlockView extends RelativeLayout {
 
     public void resetView(){
         mIsUnLocked=false;
+        setImageDefault();
         scrollToLeft(rl_slide);
+    }
+
+    private void setImageDefault() {
+        /**
+         * @method name:setImageDefault
+         * @des:  设置默认图片
+         * @param :[]
+         * @return type:void
+         * @date 创建时间:2017/5/25
+         * @author Chuck
+         **/
+
+        if(slideImageViewResId>0){
+            iv_slide.setImageResource(slideImageViewResId);//滑块imagview设置资源
+        }
     }
 
     public interface CallBack{

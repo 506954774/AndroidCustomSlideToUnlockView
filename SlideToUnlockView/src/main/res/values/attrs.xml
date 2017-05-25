@@ -5,15 +5,17 @@
 
 
 
+
     <!-- 滑动解锁控件 xml配置属性 -->
     <declare-styleable name="SlideToUnlockView">
-        <attr name="slideImageViewWidth" format="dimension"/>
-        <attr name="slideImageViewResId" format="reference"/>
-        <attr name="viewBackgroundResId" format="reference"/>
-        <attr name="textHint" format="string"/>
-        <attr name="textSize" format="integer"/>
-        <attr name="textColorResId" format="color"/>
-        <attr name="slideThreshold" format="float"/>
+        <attr name="slideImageViewWidth" format="dimension"/><!-- 滑块宽度 -->
+        <attr name="slideImageViewResId" format="reference"/><!-- 滑块资源id -->
+        <attr name="slideImageViewResIdAfter" format="reference"/><!-- 滑动到右边时,滑块资源id -->
+        <attr name="viewBackgroundResId" format="reference"/><!-- 背景资源id -->
+        <attr name="textHint" format="string"/><!-- 文本内容 -->
+        <attr name="textSize" format="integer"/><!-- 文本字号 -->
+        <attr name="textColorResId" format="color"/><!-- 文本字色 -->
+        <attr name="slideThreshold" format="float"/><!-- 滑动阈值,默认是0.5,当右滑距离不满整个控件宽度的0.5,就会回弹至左边 -->
     </declare-styleable>
 
 
