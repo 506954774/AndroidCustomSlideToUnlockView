@@ -7,6 +7,7 @@ dependencies {</br>
    compile 'com.linklink.views:slide_to_unlock_view:1.0.0'</br>
 }</br>
 
+效果图:</br>
 
  ![img](https://github.com/506954774/AndroidCustomSlideToUnlockView/blob/master/demo.gif?raw=true)
 
