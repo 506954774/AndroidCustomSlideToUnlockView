@@ -1,13 +1,13 @@
 ﻿# AndroidCustomSlideToUnlockView
-安卓自定义滑动解锁控件
+## 安卓自定义滑动解锁控件
 
-添加依赖:</br>
+### 添加依赖:</br>
 dependencies {</br>
     // your dependencies ...</br>
    compile 'com.linklink.views:slide_to_unlock_view:1.0.0'</br>
 }</br>
 
-效果图:</br>
+### 效果图:</br>
 
  ![img](https://github.com/506954774/AndroidCustomSlideToUnlockView/blob/master/demo.gif?raw=true)
 
