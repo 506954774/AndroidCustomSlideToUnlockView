@@ -1,5 +1,7 @@
 ﻿# AndroidCustomSlideToUnlockView
-安卓自定义滑动解锁控件
+安卓自定义滑动解锁控件 Dependency: compile 'com.linklink.views:slide_to_unlock_view:1.0.0'
+
+
 
 
  ![img](https://github.com/506954774/AndroidCustomSlideToUnlockView/blob/master/demo.gif?raw=true)

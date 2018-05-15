@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
 
+apply plugin: 'maven'
+apply plugin: 'com.novoda.bintray-release'
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
@@ -24,4 +27,26 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.github.florent37:viewanimator:1.0.0@aar'
+}
+
+
+
+publish {
+    userOrg = 'linklink'
+    groupId = 'com.linklink.views'
+    artifactId = 'slide_to_unlock_view'
+    version = '1.0.0'
+    description = 'Slide To Unlock View'
+    website = 'https://github.com/506954774/AndroidCustomSlideToUnlockView'
+}
+
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
 }
