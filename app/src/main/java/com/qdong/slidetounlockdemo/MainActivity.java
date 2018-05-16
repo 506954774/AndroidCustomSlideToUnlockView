@@ -1,15 +1,14 @@
 package com.qdong.slidetounlockdemo;
-
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
-
 import com.qdong.slide_to_unlock_view.CustomSlideToUnlockView;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private com.qdong.slide_to_unlock_view.CustomSlideToUnlockView mCustomSlideToUnlockView;
+    private CustomSlideToUnlockView mCustomSlideToUnlockView;
     private TextView tv_text;
 
     @Override
