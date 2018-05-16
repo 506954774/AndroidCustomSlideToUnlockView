@@ -23,16 +23,39 @@ dependencies {</br>
 
  ## xml : </br>
   <com.qdong.slide_to_unlock_view.CustomSlideToUnlockView</br>
-             android:id="@+id/slide_to_unlock"</br>
-             android:layout_width="match_parent"</br>
-             android:layout_height="50dp"</br>
-             chuck:viewBackgroundResId="@drawable/shape_round_normal_green"</br>
-             chuck:slideImageViewWidth="@dimen/slide_width"</br>
-             chuck:slideImageViewResId="@mipmap/icon_slide"</br>
-             chuck:slideImageViewResIdAfter="@mipmap/ic_launcher"</br>
-             chuck:slideThreshold="0.5"</br>
-             chuck:textSize="6"</br>
-             chuck:textHint="@string/hint"</br>
-             chuck:textColorResId="@color/colorWhite"</br>
-             ></br>
+            >> android:id="@+id/slide_to_unlock"</br>
+            >> android:layout_width="match_parent"</br>
+            >> android:layout_height="50dp"</br>
+            >> chuck:viewBackgroundResId="@drawable/shape_round_normal_green"</br>
+            >> chuck:slideImageViewWidth="@dimen/slide_width"</br>
+             >>chuck:slideImageViewResId="@mipmap/icon_slide"</br>
+            >> chuck:slideImageViewResIdAfter="@mipmap/ic_launcher"</br>
+            >> chuck:slideThreshold="0.5"</br>
+            >> chuck:textSize="6"</br>
+            >> chuck:textHint="@string/hint"</br>
+            >> chuck:textColorResId="@color/colorWhite"</br>
+            >> ></br>
          </com.qdong.slide_to_unlock_view.CustomSlideToUnlockView></br>
+
+  ## Java : </br>
+  mCustomSlideToUnlockView= (com.qdong.slide_to_unlock_view.CustomSlideToUnlockView) findViewById(R.id.slide_to_unlock);</br>
+  tv_text= (TextView) findViewById(R.id.tv_text);</br>
+
+          >>CustomSlideToUnlockView.CallBack callBack=new CustomSlideToUnlockView.CallBack() {</br>
+              >>@Override</br>
+              >>public void onSlide(int distance) {</br>
+                  >>>>tv_text.setText("slide distance:"+distance);</br>
+             >> }</br>
+
+             >> @Override</br>
+             >> public void onUnlocked() {</br>
+                 >>>> tv_text.setText("onUnlocked");</br>
+             >> }</br>
+         >> };</br>
+          >>mCustomSlideToUnlockView.setmCallBack(callBack);</br>
+          >>findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {</br>
+              >>@Override</br>
+             >> public void onClick(View view) {</br>
+                  >>>>mCustomSlideToUnlockView.resetView();</br>
+              >>}</br>
+          >>});</br>
