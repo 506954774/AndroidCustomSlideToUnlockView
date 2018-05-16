@@ -32,7 +32,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.github.florent37:viewanimator:1.0.0@aar'
-    compile project(':slidetounlockview')
+    //compile project(':slidetounlockview')
 
-    //compile 'com.linklink.views:slide_to_unlock_view:1.0.0'
+    compile 'com.linklink.views:slide_to_unlock_view:1.0.0'
 }
