@@ -21,7 +21,7 @@ dependencies {</br>
  >>name="textColorResId" format="color"//文本字色</br>
  >>name="slideThreshold" format="float"//滑动阈值,默认是0.5,当右滑距离不满整个控件宽度的0.5,就会回弹至左边</br> </br>
 
- ## xml : </br>
+ ## activity_main.xml : </br>
   <com.qdong.slide_to_unlock_view.CustomSlideToUnlockView</br>
   android:id="@+id/slide_to_unlock"</br>
   android:layout_width="match_parent"</br>
@@ -34,10 +34,9 @@ dependencies {</br>
   chuck:textSize="6"</br>
   chuck:textHint="@string/hint"</br>
   chuck:textColorResId="@color/colorWhite"</br>
-  ></br>
   </com.qdong.slide_to_unlock_view.CustomSlideToUnlockView></br>
 
-  ## Java : </br>
+  ## MainActivity.java : </br>
   ```Java
   package com.qdong.slidetounlockdemo;
   import android.os.Bundle;
